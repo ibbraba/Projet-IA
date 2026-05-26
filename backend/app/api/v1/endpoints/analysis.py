@@ -36,11 +36,17 @@ def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     visualization = build_visualization_data(score)
     suggestions = generate_suggestions(cv_text, request.job_description)
 
+    details = match_result.get("details", {})
+    strengths = details.get("matched_terms", [])
+    weaknesses = details.get("missing_terms", [])
+
 
 
     return AnalyzeResponse(
         score=score,
         message="analysis complete",
         visualization=visualization,
+        strengths=strengths,
+        weaknesses=weaknesses,
         suggestions=suggestions
     )

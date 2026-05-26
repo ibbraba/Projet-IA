@@ -1,6 +1,14 @@
 import Card from "../ui/Card";
 
-export default function JobDescriptionInput() {
+type JobDescriptionInputProps = {
+	value: string;
+	onChange: (value: string) => void;
+};
+
+export default function JobDescriptionInput({
+	value,
+	onChange,
+}: JobDescriptionInputProps) {
 	return (
 		<Card title="Offre d'emploi">
 			<div className="space-y-3">
@@ -10,6 +18,8 @@ export default function JobDescriptionInput() {
 				<textarea
 					className="min-h-[180px] w-full rounded-md border border-slate-300 bg-white p-3 text-sm focus:border-slate-400 focus:outline-none"
 					placeholder="Description de l'offre..."
+					value={value}
+					onChange={(event) => onChange(event.target.value)}
 				/>
 			</div>
 		</Card>
