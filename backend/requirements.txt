@@ -1,19 +1,19 @@
-fastapi==0.110.0
-uvicorn==0.29.0
-pydantic==2.6.4
-python-multipart==0.0.9
-python-dotenv==1.0.1
+fastapi
+uvicorn
+pydantic
+python-multipart
+python-dotenv
 
-PyPDF2==3.0.1
-pdfplumber==0.11.0
-spacy==3.7.4
-sentence-transformers==2.6.1
-scikit-learn==1.4.2
-nltk==3.8.1
+PyPDF2
+pdfplumber
+spacy
+sentence-transformers
+scikit-learn
+nltk
 
-anthropic==0.25.2
-openai==1.25.0
+anthropic
+openai
 
-redis==5.0.4
-SQLAlchemy==2.0.30
-psycopg2-binary==2.9.9
+redis
+SQLAlchemy
+psycopg2-binary

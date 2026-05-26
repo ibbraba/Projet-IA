@@ -35,7 +35,7 @@ services:
       - app
 
   postgres:
-    image: postgres:15-alpine
+    image: postgres:latest
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-cvuser}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-cvpass}

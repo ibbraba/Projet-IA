@@ -7,6 +7,7 @@ class HealthResponse(BaseModel):
 
 class UploadResponse(BaseModel):
 	upload_id: str
+	extracted_text: str | None = None
 
 
 class AnalyzeRequest(BaseModel):

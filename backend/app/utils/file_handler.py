@@ -14,5 +14,5 @@ def save_upload(file: UploadFile, upload_dir: str) -> str:
 
 	with open(file_path, "wb") as handle:
 		handle.write(file.file.read())
-
+	print(f"Saved file to {file_path}")
 	return file_path
