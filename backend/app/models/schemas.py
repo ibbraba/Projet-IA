@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Any
 
 
 class HealthResponse(BaseModel):
@@ -16,5 +17,7 @@ class AnalyzeRequest(BaseModel):
 
 
 class AnalyzeResponse(BaseModel):
-	score: float
-	message: str
+    score: float
+    message: str
+    visualization: dict[str, Any]
+    suggestions: list[dict[str, Any]]

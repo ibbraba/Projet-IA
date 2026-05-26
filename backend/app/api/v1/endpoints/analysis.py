@@ -33,7 +33,14 @@ def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     _ = process_cv_text(cv_text)
     match_result = match_semantic(cv_text, request.job_description)
     score = compute_score(match_result)
-    _ = build_visualization_data(score)
-    _ = generate_suggestions(cv_text, request.job_description)
+    visualization = build_visualization_data(score)
+    suggestions = generate_suggestions(cv_text, request.job_description)
 
-    return AnalyzeResponse(score=score, message="analysis complete")
+
+
+    return AnalyzeResponse(
+        score=score,
+        message="analysis complete",
+        visualization=visualization,
+        suggestions=suggestions
+    )
