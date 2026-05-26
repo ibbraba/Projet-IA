@@ -2,8 +2,9 @@ import axios from "axios";
 
 import type { AnalyzeResponse, UploadResponse } from "../types/api.types";
 
+console.log("API base URL:", (import.meta as any).env.VITE_API_BASE_URL);
 const api = axios.create({
-	baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:8000",
+	baseURL: (import.meta as any).env.VITE_API_BASE_URL || "http://localhost:8000",
 });
 
 export async function uploadCv(file: File): Promise<UploadResponse> {
